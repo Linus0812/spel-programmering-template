@@ -3,3 +3,5 @@ Mall till https://koda.nu/ js bibbliotek
 
 Klicka på knappen fork och gör det till erat eget repo.
 Ändra sedan namnet i settings till erat för- och efter namn. 
+
+Video tutorials vi kommera att följa: https://www.youtube.com/playlist?list=PLacLTA7npkEaxlsKIL06aLqtLVKIKurRN
