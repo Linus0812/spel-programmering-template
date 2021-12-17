@@ -57,9 +57,9 @@ preloadSound(LJUD)
 Laddar in ett ljud i datorns minne.
 ### random(X)
 Returnerar ett slumptal mellan 0 och X - 1.
-randomAlternative(LISTA)
+### randomAlternative(LISTA)
 Returnerar ett slumpmässigt element från en lista.
-rectangle(X, Y, BREDD, HÖJD, FÄRG)
+### rectangle(X, Y, BREDD, HÖJD, FÄRG)
 Ritar en rektangel på koordinaten (X, Y) med den givna bredden, höjden och färgen.
 ### restore()
 Återställer koordinatsystemet till det tillstånd som det var i vid det senaste anropet av save().
@@ -67,7 +67,7 @@ Ritar en rektangel på koordinaten (X, Y) med den givna bredden, höjden och fä
 Ritar en ring på position (X, Y) med den givna radien, linjetjockleken och färgen.
 ### rotate(GRADER)
 Roterar koordinatsystemet med GRADER grader.
-rotateRadians(RADIANER)
+### rotateRadians(RADIANER)
 Roterar koordinatsystemet med RADIANER radianer.
 ### save()
 Sparar koordinatsystemets nuvarande läge.
@@ -75,7 +75,7 @@ Sparar koordinatsystemets nuvarande läge.
 Förstorar eller förminskar hela koordinatsystemet i X- respektive Y-ledd. Om ett negativt tal anges blir koordinatsystemet spegelvänt kring den axeln.
 Exempel: scale(2, 2) (allt blir dubbelt så stort)
 Exempel: scale(1, -1) (allt blir upp-och-nedvänt)
-showMouse()
+### showMouse()
 Gör att muspekaren blir synlig.
 sin(V) cos(V) tan(V) asin(V) acos(V) atan(V)
 De vanligaste trigonometriska funktionerna sinus, cosinus, tangens samt deras inverser. Alla tar som argument en vinkel uttryckt i radianer.
@@ -83,9 +83,9 @@ De vanligaste trigonometriska funktionerna sinus, cosinus, tangens samt deras in
 Returnerar kvadratroten av talet X.
 start()
 Den första funktionen som körs.
-stopSound(LJUD)
+### stopSound(LJUD)
 Stoppar ett ljud om det håller på att spelas upp.
-stopUpdate()
+### stopUpdate()
 Stoppar update()-funktionen och avslutar därmed animeringen.
 text(X, Y, STORLEK, TEXTSTRÄNG, FÄRG)
 Ritar ut textsträngen TEXTSTRÄNG på koordinaten (X, Y) med den givna färgen och storleken.
@@ -95,13 +95,13 @@ totalWidth
 Den totala bredden på den tillgängliga ritytan.
 touchscreen
 Ett objekt som innehåller information om användarens petskärm. Objektet innehåller variabeln currentlyTouched, som är sann eller falsk beroende på om någon petar för tillfället, samt arrayen points som innehåller de beröringspunkter som just då finns. Varje beröring har tre egenskaper, x, y och id.
-translate(X, Y)
+### translate(X, Y)
 Förflyttar koordinatsystemets origo till koordinaten (X, Y).
 triangle(X1, Y1, X2, Y2, X3, Y3, FÄRG)
 Ritar en triangel som har sina hörn på koordinaterna (X1, Y1), (X2, Y2) och (X3, Y3) med den givna färgen.
 turtle
 Ett objekt som man kan använda för att göra så kallad turtlegrafik.
-update()
+### update()
 En funktion som anropas många gånger per sekund och gör det möjligt för programmeraren att skapa rörliga objekt.
 updatesPerSecond
 Innehåller ett tal som anger hur många gånger per sekund som update() anropas.
