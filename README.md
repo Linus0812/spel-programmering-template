@@ -11,67 +11,67 @@ Notera att detta bibblioteket är grundläggande och det gör att man har mindre
 
 ## API
 
-abs(X)
+### abs(X)
 Returnerar absolutbeloppet av talet X.
 arc(X, Y, RADIE, VINKEL, TJOCKLEK, FÄRG)
 Ritar ett cirkelsegment på position (X, Y) med den givna radien, vinkeln, linjetjockleken och färgen.
-ceil(X)
+### ceil(X)
 Returnerar talet X utan några decimaler, avrundat uppåt.
 circle(X, Y, RADIE, FÄRG)
 Ritar en fylld cirkel på position (X, Y) med den givna radien och färgen.
-clearScreen()
+### clearScreen()
 Rensar ritytan.
-distance(X1, Y1, X2, Y2)
+### distance(X1, Y1, X2, Y2)
 Returnerar avståndet mellan punkterna (X1, Y1) och (X2, Y2). Kan också anropas med endast två argument om de är objekt som innehåller variablerna x och y.
-distance3D(X1, Y1, Z1, X2, Y2, Z2)
+### distance3D(X1, Y1, Z1, X2, Y2, Z2)
 Returnerar avståndet mellan punkterna (X1, Y1, Z1) och (X2, Y2, Z2). Kan också anropas med bara två argument om de är objekt som innehåller variablerna x, y och z.
-fill(FÄRG)
+### fill(FÄRG)
 Fyller ritytan med en färg.
-floor(X)
+### floor(X)
 Returnerar talet X utan några decimaler, avrundat neråt.
 getPixel(X, Y)
-Returnerar ett objekt som innehåller variablerna red, green och blue, som representerar färgen på den pixel som befinner sig på positionen (X, Y).
-hideMouse()
+Returnerar ett objekt som innehåller variablerna red, green och blue, som representerar färgen på den pixel som befinner sig på ### positionen (X, Y).
+### hideMouse()
 Döljer muspekaren.
 keyboard
 Ett objekt som innehåller variabler för tangenterna på tangentbordet. Variablerna är antingen sanna eller falska beroende på om just den tangenten är nedtryckt för tillfället. De tangenter som du kan kontrollera med namn är: up, down, left, right, space, shift, alt, ctrl, enter, zero → nine, a → z. Bokstäverna stämmer bara på svenska och engelska tangentbord. Det går också att kontrollera keyboard[X], där X är koden för en viss tangent.
-line(X1, Y1, X2, Y2, TJOCKLEK, FÄRG)
+### line(X1, Y1, X2, Y2, TJOCKLEK, FÄRG)
 Ritar ett streck från koordinaten (X1, Y1) till (X2, Y2) med den givna tjockleken och färgen.
 loopSound(LJUD, VOLYM)
 Spela ett bakgrundsljud om och om igen i bakgrunden, exempelvis musik. Argumenten fungerar som i playSound som är beskrivet nedan.
 math
 Ett objekt som gör det lätt att experimentera med matematik.
-mixColor(R, G, B)
+### mixColor(R, G, B)
 Används för att blanda en egen färg. Det första argumentet anger hur mycket rött som ska blandas in, det andra anger mängden grönt och det tredje mängden blått. Varje argument ska vara mellan 0 och 255. Exempel: circle(100, 100, 50, mixColor(100, 0, 0));.
 mouse
 Ett objekt som innehåller musens nuvarande position och status. Variablerna x och y ger positionen och variablerna left, right och middle ger sant eller falskt beroende på om motsvarande musknapp är nedtryckt.
 pi
 En variabel som innehåller talet pi.
-picture(X, Y, BILD)
+### picture(X, Y, BILD)
 Placerar en bild på ritytan, där bildens övre vänstra hörn hamnar på position (X, Y). Argumentet BILD kan vara en webbadress eller en sökväg till en bild på datorn.
-playSound(LJUD, VOLYM)
+### playSound(LJUD, VOLYM)
 Spela upp en ljudeffekt. Argumentet volym ska vara ett tal mellan 0 och 1; om du inte anger någon volym så blir den 1.
-pow(BAS, EXPONENT)
+### pow(BAS, EXPONENT)
 Returnerar ett tal som är BAS upphöjt till EXPONENT. Om man anropar funktionen med basen 2 och exponenten 3 blir resultatet: 8.
 preloadSound(LJUD)
 Laddar in ett ljud i datorns minne.
-random(X)
+### random(X)
 Returnerar ett slumptal mellan 0 och X - 1.
 randomAlternative(LISTA)
 Returnerar ett slumpmässigt element från en lista.
 rectangle(X, Y, BREDD, HÖJD, FÄRG)
 Ritar en rektangel på koordinaten (X, Y) med den givna bredden, höjden och färgen.
-restore()
+### restore()
 Återställer koordinatsystemet till det tillstånd som det var i vid det senaste anropet av save().
-ring(X, Y, RADIE, TJOCKLEK, FÄRG)
+### ring(X, Y, RADIE, TJOCKLEK, FÄRG)
 Ritar en ring på position (X, Y) med den givna radien, linjetjockleken och färgen.
-rotate(GRADER)
+### rotate(GRADER)
 Roterar koordinatsystemet med GRADER grader.
 rotateRadians(RADIANER)
 Roterar koordinatsystemet med RADIANER radianer.
-save()
+### save()
 Sparar koordinatsystemets nuvarande läge.
-scale(X-FAKTOR, Y-FAKTOR)
+### scale(X-FAKTOR, Y-FAKTOR)
 Förstorar eller förminskar hela koordinatsystemet i X- respektive Y-ledd. Om ett negativt tal anges blir koordinatsystemet spegelvänt kring den axeln.
 Exempel: scale(2, 2) (allt blir dubbelt så stort)
 Exempel: scale(1, -1) (allt blir upp-och-nedvänt)
@@ -79,7 +79,7 @@ showMouse()
 Gör att muspekaren blir synlig.
 sin(V) cos(V) tan(V) asin(V) acos(V) atan(V)
 De vanligaste trigonometriska funktionerna sinus, cosinus, tangens samt deras inverser. Alla tar som argument en vinkel uttryckt i radianer.
-sqrt(X)
+### sqrt(X)
 Returnerar kvadratroten av talet X.
 start()
 Den första funktionen som körs.
