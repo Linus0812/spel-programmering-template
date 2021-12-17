@@ -17,7 +17,7 @@ Returnerar absolutbeloppet av talet X.
 Ritar ett cirkelsegment på position (X, Y) med den givna radien, vinkeln, linjetjockleken och färgen.
 ### ceil(X)
 Returnerar talet X utan några decimaler, avrundat uppåt.
-circle(X, Y, RADIE, FÄRG)
+### circle(X, Y, RADIE, FÄRG)
 Ritar en fylld cirkel på position (X, Y) med den givna radien och färgen.
 ### clearScreen()
 Rensar ritytan.
@@ -29,23 +29,23 @@ Returnerar avståndet mellan punkterna (X1, Y1, Z1) och (X2, Y2, Z2). Kan också
 Fyller ritytan med en färg.
 ### floor(X)
 Returnerar talet X utan några decimaler, avrundat neråt.
-## getPixel(X, Y)
+### getPixel(X, Y)
 Returnerar ett objekt som innehåller variablerna red, green och blue, som representerar färgen på den pixel som befinner sig på ### positionen (X, Y).
 ### hideMouse()
 Döljer muspekaren.
-## keyboard
+### keyboard
 Ett objekt som innehåller variabler för tangenterna på tangentbordet. Variablerna är antingen sanna eller falska beroende på om just den tangenten är nedtryckt för tillfället. De tangenter som du kan kontrollera med namn är: up, down, left, right, space, shift, alt, ctrl, enter, zero → nine, a → z. Bokstäverna stämmer bara på svenska och engelska tangentbord. Det går också att kontrollera keyboard[X], där X är koden för en viss tangent.
 ### line(X1, Y1, X2, Y2, TJOCKLEK, FÄRG)
 Ritar ett streck från koordinaten (X1, Y1) till (X2, Y2) med den givna tjockleken och färgen.
-## loopSound(LJUD, VOLYM)
+### loopSound(LJUD, VOLYM)
 Spela ett bakgrundsljud om och om igen i bakgrunden, exempelvis musik. Argumenten fungerar som i playSound som är beskrivet nedan.
-## math
+### math
 Ett objekt som gör det lätt att experimentera med matematik.
 ### mixColor(R, G, B)
 Används för att blanda en egen färg. Det första argumentet anger hur mycket rött som ska blandas in, det andra anger mängden grönt och det tredje mängden blått. Varje argument ska vara mellan 0 och 255. Exempel: circle(100, 100, 50, mixColor(100, 0, 0));.
-## mouse
+### mouse
 Ett objekt som innehåller musens nuvarande position och status. Variablerna x och y ger positionen och variablerna left, right och middle ger sant eller falskt beroende på om motsvarande musknapp är nedtryckt.
-## pi
+### pi
 En variabel som innehåller talet pi.
 ### picture(X, Y, BILD)
 Placerar en bild på ritytan, där bildens övre vänstra hörn hamnar på position (X, Y). Argumentet BILD kan vara en webbadress eller en sökväg till en bild på datorn.
@@ -53,7 +53,7 @@ Placerar en bild på ritytan, där bildens övre vänstra hörn hamnar på posit
 Spela upp en ljudeffekt. Argumentet volym ska vara ett tal mellan 0 och 1; om du inte anger någon volym så blir den 1.
 ### pow(BAS, EXPONENT)
 Returnerar ett tal som är BAS upphöjt till EXPONENT. Om man anropar funktionen med basen 2 och exponenten 3 blir resultatet: 8.
-preloadSound(LJUD)
+### preloadSound(LJUD)
 Laddar in ett ljud i datorns minne.
 ### random(X)
 Returnerar ett slumptal mellan 0 och X - 1.
@@ -77,7 +77,7 @@ Exempel: scale(2, 2) (allt blir dubbelt så stort)
 Exempel: scale(1, -1) (allt blir upp-och-nedvänt)
 ### showMouse()
 Gör att muspekaren blir synlig.
-sin(V) cos(V) tan(V) asin(V) acos(V) atan(V)
+### sin(V) cos(V) tan(V) asin(V) acos(V) atan(V)
 De vanligaste trigonometriska funktionerna sinus, cosinus, tangens samt deras inverser. Alla tar som argument en vinkel uttryckt i radianer.
 ### sqrt(X)
 Returnerar kvadratroten av talet X.
@@ -103,5 +103,5 @@ turtle
 Ett objekt som man kan använda för att göra så kallad turtlegrafik.
 ### update()
 En funktion som anropas många gånger per sekund och gör det möjligt för programmeraren att skapa rörliga objekt.
-## updatesPerSecond
+### updatesPerSecond
 Innehåller ett tal som anger hur många gånger per sekund som update() anropas.
