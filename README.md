@@ -113,7 +113,7 @@ Innehåller ett tal som anger hur många gånger per sekund som update() anropas
 
 ## Keyboard id:s
 
-     38: "up",
+    38: "up",
 
     40: "down",
 
