@@ -9,9 +9,12 @@ Video tutorials vi kommera att följa: https://www.youtube.com/playlist?list=PLa
 Notera att detta bibblioteket är grundläggande och det gör att man har mindre frihet än andra bibbliotek. 
 
 ## Example
-  circle(200, 150, 70, "red");
-	circle(50, 50, 50, "green");
-  arc(100, 100, 50, 90, 5, "yellow");
+"circle(200, 150, 70, "red");"
+
+"circle(50, 50, 50, "green");"
+
+"arc(100, 100, 50, 90, 5, "yellow");"
+
 
 ## API
 
