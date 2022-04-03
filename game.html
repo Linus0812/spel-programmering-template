@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-image: url(img/background.jpg);">
+    <script src="simple.js">
+        
+        var ctx = document.getElementById('canvas').getContext('2d');
+
+        const sleep = (milliseconds) => {
+        return new Promise(resolve => setTimeout(resolve, milliseconds))
+        }
+
+        
+        vänster = totalWidth - totalWidth + 20
+
+        uppe = totalHeight - totalHeight + 20
+
+        höger = totalWidth - 30
+
+        nere = totalHeight -30
+
+        var player_1 = {x: vänster, y: nere - 60, size: 10, xSpeed: 0, ySpeed: 0};
+
+        var player_2 = {x: höger - 50, y: nere - 60, size: 10, xSpeed: 0, ySpeed: 0};
+
+        var laser_1 = {x: totalWidth + 100000, y: totalHeight + 100000, xSize: 2, ySize: 80, ySpeed: 15};
+
+        var laser_2 = {x: totalWidth + 100000, y: totalHeight + 100000, xSize: 2, ySize: 80, ySpeed: 15};
+
+        var enemies = [];
+
+        var score = 0;
+
+        var i = 0;
+
+        var health = 10;
+
+        while (i < 100) {
+
+            enemies.push({x: random(totalWidth), y: totalHeight - totalHeight - 10, speed: random(1,5)});
+
+            i += 1;
+        }
+
+        const spawnEnemies = async () => {
+                for (var i = 0; i < 100; i += 1) 
+                {
+                    var enemy = enemies[i];
+
+                    picture(enemy.x, enemy.y, "img/droid.png");
+
+                    enemy.y += enemy.speed;
+
+                    await sleep(4000);
+
+                    if (distance(laser_1, enemies[i]) < 15 ) {
+
+                        enemies.splice(i, 1)
+
+                        score += 100;
+
+                        //playSound("http://spelprogrammering.nu/ljud/effekter/SourceSound/sfx/explosion4.wav");
+                    }
+
+                    if (distance(laser_2, enemies[i]) < 15 ) {
+
+                        enemies.splice(i, 1)
+
+                        score += 100;
+
+                        //playSound("http://spelprogrammering.nu/ljud/effekter/SourceSound/sfx/explosion4.wav");
+
+                    }
+
+                    if (enemies[i].y > totalHeight) {
+                        enemies.splice(i, 1);
+                        health -= 1;
+                    }
+                }
+            }
+
+        function drawScore() {
+            ctx.font = "30px Arial";
+            ctx.fillStyle = "#0095DD";
+            ctx.fillText("Score: "+score, 10, 40);
+        }
+
+        function  drawHealth() {
+            ctx.font = "30px Arial";
+            ctx.fillStyle = "#0095DD";
+            ctx.fillText("Health: " + health, totalWidth - 200, 40);
+        }
+
+        function drawGameOver() {
+            ctx.font = "80px Arial";
+            ctx.fillStyle = "#880808";
+            ctx.fillText("GAME OVER", totalWidth / 2 - 250, totalHeight / 2);
+        }
+
+        function drawFinalScore() {
+            ctx.font = "60px Arial";
+            ctx.fillStyle = "#880808";
+            ctx.fillText("Score: "+score, totalWidth / 2 - 100, totalHeight / 2 + 100);
+        }
+
+        function GameOver() {
+            enemies = [];
+            stopUpdate();
+            drawGameOver();
+            drawFinalScore();
+            stopSound("http://spelprogrammering.nu/ljud/musik/Lightforce_01.wav",);
+        }
+
+
+        function update()
+        {
+
+            clearScreen();
+
+            //playSound("http://spelprogrammering.nu/ljud/musik/Lightforce_01.wav");
+
+            fill("blue")
+            rectangle(5, 5, totalWidth-10, totalHeight-10, "black");
+
+            rectangle(laser_1.x, laser_1.y, laser_1.xSize, laser_1.ySize, "green");
+
+            rectangle(laser_2.x, laser_2.y, laser_2.xSize, laser_2.ySize, "yellow");
+            
+            spawnEnemies();
+
+            drawScore();
+
+            if (health < 1) {
+                GameOver();
+            }
+
+            drawHealth();
+
+            if (keyboard.e){
+                laser_1.x = player_1.x + 30
+                laser_1.y = player_1.y
+                //playSound("http://spelprogrammering.nu/ljud/effekter/laser_gun_2.wav");
+            }
+
+            laser_1.y -= laser_1.ySpeed;
+
+            if (keyboard.shift){
+                laser_2.x = player_2.x + 30
+                laser_2.y = player_2.y
+                //playSound("http://spelprogrammering.nu/ljud/effekter/laser_gun_2.wav");
+            }
+
+            laser_2.y -= laser_2.ySpeed;
+
+            with(player_1)
+            {
+                picture(x, y, "img/clone_orange.png");
+
+                x += xSpeed;
+                y += ySpeed;
+
+                xSpeed = 0
+                ySpeed = 0
+
+                if(keyboard.w)
+                {
+                    xSpeed = 0
+                    ySpeed = -5
+                }
+
+                if(keyboard.a)
+                {
+                    xSpeed = -5
+                    ySpeed = 0
+                }
+
+                if(keyboard.s)
+                {
+                    xSpeed = 0
+                    ySpeed = 5
+                }
+
+                if(keyboard.d)
+                {
+                    xSpeed = 5
+                    ySpeed = 0
+                }
+
+                if(keyboard.space)
+                {
+                    x += xSpeed * 2;
+                    y += ySpeed * 2;
+                }
+
+                if (x < vänster - 30)
+                    xSpeed = 1
+
+                if (x > höger - 30)
+                    xSpeed = -1
+
+                if (y > nere - 45)
+                    ySpeed = -1
+
+                if (y < uppe - 15)
+                    ySpeed = 1
+
+            }
+                    
+
+            with(player_2)
+            {
+                picture(x, y, "img/clone_green.png");
+
+                x += xSpeed;
+                y += ySpeed;
+
+                xSpeed = 0
+                ySpeed = 0
+
+                if(keyboard.up)
+                {
+                    xSpeed = 0
+                    ySpeed = -5
+                }
+
+                if(keyboard.left)
+                {
+                    xSpeed = -5
+                    ySpeed = 0
+                }
+
+                if(keyboard.down)
+                {
+                    xSpeed = 0
+                    ySpeed = 5
+                }
+
+                if(keyboard.right)
+                {
+                    xSpeed = 5
+                    ySpeed = 0
+                }
+
+                if(keyboard.space)
+                {
+                    x += xSpeed * 2;
+                    y += ySpeed * 2;
+                }
+
+                if (x < vänster - 30)
+                    xSpeed = 1
+
+                if (x > höger - 35)
+                    xSpeed = -1
+
+                if (y > nere - 50)
+                    ySpeed = -1
+
+                if (y < uppe - 15)
+                    ySpeed = 1
+            }
+        }
+        
+    </script>
+</body>
+</html>

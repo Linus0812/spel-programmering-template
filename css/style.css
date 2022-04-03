@@ -1,0 +1,61 @@
+/*containern för översta menyn*/
+.flexbox-container-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    border-radius: 20px;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+
+.flexbox-item-text {
+    width: calc(100%)
+}
+
+.flexbox-item-start {
+    width: calc(100%);
+}
+
+.flexbox-item-controls {
+    width: calc(100%);
+}
+
+.flexbox-item-creator {
+    width: calc(100%);
+}
+/*ändrar länkarnas färg till vit och gör att det strecket under inte är där*/
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+/*centrerar all text och ändrar all text till den fonten*/
+body {
+    text-align: center;
+    font-family: "Titillium Web";
+}
+
+/*bakgrundsfärgen för hela hemsidan*/
+html {
+    background-color: #000000;
+}
+
+/*ändrar storleken för vilder så de passar bra i flexbox itemserna*/
+img {
+    object-fit: cover;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/*ändrar all h1 text till fetstil*/
+h1 {
+    font-weight: bold;
+    color:white;
+}
+
+p {
+    font-weight: bold;
+    color:white;
+}

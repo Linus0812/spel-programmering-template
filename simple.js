@@ -20,7 +20,6 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-
 window.onload = init;
 
 Function.prototype.bind || (Function.prototype.bind = function(thisObj/*, ...boundArgs*/)
